@@ -24,3 +24,16 @@ play_encoded = le.fit_transform(play)
 #this makes a Euclidean plane
 features = list(zip(weather_encoded, temp_encoded))
 
+from sklearn.neighbors import KNeighborsClassifier
+
+#use the model and set initial KNN
+model = KNeighborsClassifier(n_neighbors=3)
+
+#train the model
+model.fit(features, play)
+
+#predict using 0 as overcast and 2 for mild
+prediction = model.predict([[0,2]])
+
+print(prediction) #should be 'Yes'
+
