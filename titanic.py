@@ -16,10 +16,10 @@ from sklearn.preprocessing import MinMaxScaler
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-train_url = "http://s3.amazonaws.com/assets.datacamp.com/course/Kaggle/train.csv"
-train = pd.read_csv(train_url)
-test_url = "http://s3.amazonaws.com/assets.datacamp.com/course/Kaggle/test.csv"
-test = pd.read_csv(test_url)
+train_data = "data/train.csv"
+train = pd.read_csv(train_data)
+test_data = "data/test.csv"
+test = pd.read_csv(test_data)
 
 print(train.head())
 print("\n")
