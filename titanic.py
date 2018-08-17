@@ -21,6 +21,26 @@ train = pd.read_csv(train_data)
 test_data = "data/test.csv"
 test = pd.read_csv(test_data)
 
-print(train.head())
-print("\n")
-print(test.head())
+# print("***** Train_Set *****")
+# print(train.describe())
+# print("\n")
+# print("***** Test_Set *****")
+# print(test.describe())
+
+# find NA values to be filed in 
+# print(train.isna().head())
+# print(train.isna().sum())
+
+# Now, there are several ways you can fill in NAs:
+
+# A constant value that has meaning within the domain, such as 0, distinct from all other values.
+# A value from another randomly selected record.
+# A mean, median or mode value for the column.
+# A value estimated by another machine learning model.
+
+# Fill missing values with mean column values in the train set
+train.fillna(train.mean(), inplace=True)
+# Fill missing values with mean column values in the test set
+test.fillna(test.mean(), inplace=True)
+
+print(test.isna().sum())
